@@ -7,6 +7,6 @@ class Message < ActiveRecord::Base
     # 内容は必須入力かつ2文字以上30文字以下
     validates :body , length: { minimum: 2, maximum: 30 } , presence: true
     
-    # 数字は0以上の整数のみ許可
+    # 数字は0以上、130未満の整数のみ許可
     validates :age , numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than: 130 } 
 end
